@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Minesweeper v2</title>
+</head>
+<body>
+    <div class="container header">
+        <h1>Minesweeper</h1>
+        <div class="difficulty">
+            <label class="label "for="difficulty">Select a difficulty</label>
+            <select class="select" name="difficulty" id="difficulty">
+                <option value="10">Easy</option>
+                <option value="40">Intermediare</option>
+                <option value="99">Hard</option>
+            </select>
+            <p class="minesText">10 mines left</p>
+        </div>
+    </div>
+    <div class="container">
+        <div id="board">
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
