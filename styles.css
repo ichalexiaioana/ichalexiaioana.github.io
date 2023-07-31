@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;700&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 1rem;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    /* overflow: hidden; */
+}
+.container{
+    /* border: 1px solid black; */
+    padding: 1rem;
+    overflow: hidden;
+}
+.difficulty{
+    /* border: 1px solid red; */
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.label{
+    font-size: 2em;
+}
+.select{
+    height: 2.375em;
+    font-size: 1.5em;
+    width: auto;
+    margin: 0 1em;
+}
+.minesText{
+    font-size: 2em;
+    padding: 0;
+    margin: 0;
+}
+#board{
+    border: 2px solid #777;
+}
+#board.easy{
+    width: calc(4px + 30rem);
+}
+#board.intermediare{
+    width: calc(4px + 40rem);
+}
+#board.hard{
+    width: calc(4px + 75rem);
+}
+.cell{
+    font-size: 0;
+    cursor: pointer;
+    
+}
+.cell.easy{
+    height: 3rem;
+    width: 3rem;
+}
+.cell.intermediare,
+.cell.hard{
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.cell.flagged{
+    background-image: url('flag.png');
+    background-size: cover;
+    /* background-color: red; */
+}
+.cell.active{
+    background-size: cover;
+    font-size: 0;
+    /* font-size: 1.2rem; */
+    text-align: center;
+    justify-content: center;
+    border: 0.1rem solid #777;
+}
+.cell.inactive{
+    font-size: 1.2rem;
+    background-image: url('');
+    background-size: cover;
+    background-color: #e0e0e0;
+    border-top: 0.4rem solid #FFF;
+    border-left: 0.4rem solid #FFF;
+    border-bottom: 0.4rem solid #999;
+    border-right: 0.4rem solid #999;
+}
+.row{
+    display: flex;
+}
+.row.easy{
+    width: 30rem;
+}
+.row.intermediare{
+    width: 40rem;
+}
+.row.hard{
+    width: 75rem;
+}
