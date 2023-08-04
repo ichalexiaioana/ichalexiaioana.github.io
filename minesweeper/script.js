@@ -175,6 +175,36 @@ const checkMines=function(board, boardDetails){
     // }
 }
 
+const openAdjacentCells=function(i, j){
+    const currentCell=document.getElementById(`${board[i][j].id}`);
+    let cntMines=0;
+    for(let k=0; k<8; k++){
+        if(0<=i+di[k] && i+di[k]<boardDetails.rows && 0<=j+dj[k] && j+dj[k]<boardDetails.cells)
+        {
+            if(board[i+di[k]][j+dj[k]].value===-1 && board[i+di[k]][j+dj[k]].placedFlag===true)
+                    cntMines++;
+        }
+    }
+    console.log(currentCell, board[i][j], cntMines, "hello");
+    if(cntMines==board[i][j].value){
+        for(let k=0; k<8; k++){
+            if(0<=i+di[k] && i+di[k]<boardDetails.rows && 0<=j+dj[k] && j+dj[k]<boardDetails.cells)
+            {
+                if(board[i+di[k]][j+dj[k]].value>0){
+                    const adjacentCell=document.getElementById(`${board[i+di[k]][j+dj[k]].id}`);
+                    console.log('******', adjacentCell);
+                    board[i+di[k]][j+dj[k]].clicked=true;
+                    adjacentCell.classList.add('active');
+                    adjacentCell.classList.remove('inactive');
+                    adjacentCell.style.backgroundImage=`url('${board[i+di[k]][j+dj[k]].imgLink}')`
+                }else if(board[i+di[k]][j+dj[k]].value==0){
+                    floodFill(board, boardDetails, i, j);
+                }
+            }
+        }
+    }
+}
+
 const handleChanges=function(board, boardDetails){
 
     const handleRightClick = function (e) {
@@ -215,6 +245,9 @@ const handleChanges=function(board, boardDetails){
             divBoard.style.pointerEvents='none';
             freezeBoard(board, boardDetails);
         } else if(board[i][j].value>0){
+            if(board[i][j].clicked==true){
+                openAdjacentCells(i, j);
+            }
             board[i][j].clicked=true;
             targetedCell.classList.add('active');
             targetedCell.classList.remove('inactive');
