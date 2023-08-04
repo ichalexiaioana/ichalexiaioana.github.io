@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Project</title>
+</head>
+
+<body>
+    <div class="screen">
+        <h1>Catch the blorbo</h1>
+        <button class="btn" id="start-btn">Start Game</button>
+    </div>
+
+    <div class="screen">
+        <h1>Pick your blorbo</h1>
+        <ul class="insect-list">
+            <li>
+                <button class="choose-insect-btn">
+                    <p>Ayaka</p>
+                    <img src="ayaka.png" alt="ayaka"/>
+                </button>
+            </li>
+            <li>
+                <button class="choose-insect-btn">
+                    <p>Wanderer</p>
+                    <img src="wanda.png" alt="wanderer"/>
+                </button>
+            </li>
+            <li>
+                <button class="choose-insect-btn">
+                    <p>Dottore</p>
+                    <img src="dotto.png" alt="dottore"/>
+                </button>
+            </li>
+            <li>
+                <button class="choose-insect-btn">
+                    <p>Venti</p>
+                    <img src="venti.png" alt="venti"/>
+                </button>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="screen game-container">
+        <h3 id="time">Time  00:00</h3>
+        <h5 id="score">Score:  0</h5>
+        <h5 id="message" class="">
+            Are you annoyed yet? <br>
+            You are playing an impossible game!!!
+        </h5>
+        <div class="insect-container">
+            <!-- <div class="insect">
+                <img src="http://pngimg.com/uploads/fly/fly_PNG3946.png" alt="fly"/>
+            </div> -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
