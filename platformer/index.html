@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Sort of a game idk</title>
+</head>
+<body>
+    
+    <div class="content">
+        <div class="buttons">
+            <button class="btn" id="btn-reset">reset</button>
+            <button class="btn" id="read-me">read me</button>
+            <div class="message hidden" id="message">
+                <b style="text-decoration: underline;">IMPORTANT: IF YOU CHANGE THE DIMENSIONS OF THE WINDOW PLEASE REFRESH THE PAGE !</b>
+                <br>
+                <b>GAME OBJECTIVE: </b>Climb around and touch all the blue squares. I do not guarantee that the objective can be always reached. Have fun with it!
+                <br>
+                <b>DEV NOTE: </b>Hiii fellas. I’ve been coding this generously called platformer for 3 weeks. I need some help testing out the obstacle collision. If the moving square(red guy) were to fade into an object(blue guys), some obvious changes will appear on screen. If that happens while you’re playing please take a screenshot and leave it in the replies to my tweet.
+                <br> 
+                Thank you <3  -Lex
+            </div>
+        </div>
+        <div class="show">
+            <div class="display hidden" id="err">so many errors 😭</div>
+            <div class="display" id="display">100 targets left</div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="square" id="square"></div>
+            <!-- <div class="obstacle" style="top: 650px; left: 450px"></div>
+            <div class="obstacle" style="top: 650px; left: 1300px"></div>
+
+            <div class="obstacle wide" style="top: 550px; left: 100px"></div>
+            <div class="obstacle wide" style="top: 605px; left: 100px"></div>
+            <div class="obstacle wide" style="top: 660px; left: 100px"></div>
+
+
+            <div class="obstacle wide" style="top: 400px; left: 500px"></div>
+            <div class="obstacle wide" style="top: 420px; left: 650px"></div>
+
+            <div class="obstacle wide" style="top: 230px; left: 1100px"></div> -->
+
+        </div>
+    </div>
+    <div class="obstacle" id="dummy"></div>
+    <!-- <script type="module" src="generateObstacles.js"></script> -->
+    <script type="module" src="wasdControls.js"></script>
+</body>
+</html>
