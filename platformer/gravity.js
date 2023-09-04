@@ -57,7 +57,7 @@ const gravity=function(distX, distY, checkPress){
             // console.log('aloo');
         }
         if((nextX && nextY)){
-            if(Math.abs(onScreenSquareDummy.top-obstacleDummy.top)/downMomentum>=Math.abs(onScreenSquareDummy.left-obstacleDummy.left)){//ii ia mai mult pe axa Y decat pe axa X
+            if(Math.abs(onScreenSquareDummy.top-obstacleDummy.top)/upMomentum>=Math.abs(onScreenSquareDummy.left-obstacleDummy.left)){//ii ia mai mult pe axa Y decat pe axa X
                 nextX=false;
                 // checkAroundY=false;
             }else{
