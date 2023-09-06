@@ -71,6 +71,7 @@ body {
 .square{
     width: 60px;
     height: 60px;
+    background-image: url('/left0.png');
     background-color: red;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -87,7 +88,7 @@ body {
 .square-gravity{
     /* transition: left 0.3s linear, top 1s cubic-bezier(.16,1.99,.57,1.99) !important; */
     /* transition: left 0.2s linear, top 0.2s linear !important; */
-    background-color: tomato !important;
+    background-color: transparent !important;
 }
 .obstacle{
     width: 60px;

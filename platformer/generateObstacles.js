@@ -1,4 +1,4 @@
-import {container, square, obstW, obstH, makeDummy, limX, limY} from './variables.js';
+import {container, square, obstW, obstH, makeDummy, makeShadow, limX, limY} from './variables.js';
 import { checkForObstacle } from './checkForObstacle.js';
 
 const noObstaclesRand=Math.floor(Math.random()*30)+1;
@@ -9,6 +9,8 @@ const generateObstacles=function(noObstacles=noObstaclesRand, typeOfObstacle, li
     const squareDummy=makeDummy(square);
     squareDummy.top=limY;
     squareDummy.left=parseInt(limX/2);
+
+    // const shadow=makeShadow(squareDummy, 'shadow3');
     let i=0;
     while(i<noObstacles){
         const topVal=Math.floor(Math.random()*(limYmax-limYmin+1))+limYmin;

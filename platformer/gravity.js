@@ -1,4 +1,4 @@
-import { container, square, distOnKey, makeDummy, makeShadow, limX, limY, upMomentum, downMomentum } from "./variables.js";
+import { container, square, distOnKey, makeDummy, makeShadow, limX, limY, upMomentum } from "./variables.js";
 import { checkForObstacle } from "./checkForObstacle.js";
 
 //stiu ca am apasat pe sus sau W
@@ -19,20 +19,13 @@ const gravity=function(distX, distY, checkPress){
     nextSquareDummy.left+=parseInt(distX/divideNext);
 
     const obstacles=document.querySelectorAll('.obstacle');
-    if((checkPress['w'] || checkPress['arrowup'])){
-        // const sqdm=makeDummy(square);
-        // const shadow=makeShadow(sqdm, 'shadow');
-        // const shadow1=makeShadow(nextSquareDummy, 'shadow1');
-        // const shadow2=makeShadow(nextSquareDummyX, 'shadow2');
-        // const shadow3=makeShadow(nextSquareDummyY, 'shadow3');
-    }
     obstacles.forEach(function(obstacle, j){
         let checkAroundX=false;
         let checkAroundY=false;
         let limitVal=0;
         const obstacleDummy=makeDummy(obstacle);
         const pozHere=checkForObstacle(onScreenSquareDummy, obstacleDummy, 0);
-        const pozAround=checkForObstacle(onScreenSquareDummy, obstacleDummy, 150);
+        const pozAround=checkForObstacle(onScreenSquareDummy, obstacleDummy, 100);
         // const futureX
         if(pozHere==1 && pozAround==3){
             // console.log('esti langa ceva pe acc linie', obstacle, square);
@@ -124,114 +117,7 @@ const gravity=function(distX, distY, checkPress){
                 // console.log('esti ok pe axa Y');
             }
         }
-        // console.log(obstacle, checkAroundX, checkAroundY, nextX, nextY)
-        // console.log(obstacleDummy);
-        // for(let i=1; i>=1; i--){
-        //     let pretendSquareDummy=onScreenSquareDummy;
-        //     if(i==0){pretendSquareDummy=computedSquareDummy;}
-
-        //     if(ok && j==0){
-        //         console.log(obstacle, pretendSquareDummy, onScreenSquareDummy, computedSquareDummy, distY, distX, checkPress, '***');
-        //         console.log(checkForObstacle(pretendSquareDummy, obstacleDummy, padding), "haha")
-        //     }
-        //     let newVal=0;
-            
-        //     if(checkForObstacle(pretendSquareDummy, obstacleDummy, padding)==3){
-        //         obstColided++;
-        //         const prevSquareXDummy={
-        //             top: pretendSquareDummy.top,
-        //             left: pretendSquareDummy.left,
-        //             height: pretendSquareDummy.height,
-        //             width: pretendSquareDummy.width,
-        //         }
-        //         const prevSquareYDummy={
-        //             top: pretendSquareDummy.top,
-        //             left: pretendSquareDummy.left,
-        //             height: pretendSquareDummy.height,
-        //             width: pretendSquareDummy.width,
-        //         }
-        //         const prevSquareXYDummy={
-        //             top: pretendSquareDummy.top,
-        //             left: pretendSquareDummy.left,
-        //             height: pretendSquareDummy.height,
-        //             width: pretendSquareDummy.width,
-        //         }
-        //         // console.log(prevSquareXYDummy);
-        //         prevSquareXYDummy.top-=distY;
-        //         prevSquareXYDummy.left-=distX;
-
-        //         prevSquareYDummy.top-=distY;    //daca merg doar pe X
-        //         prevSquareXDummy.left-=distX;   //daca merg doar pe Y
-
-        //         if(ok && j==0){
-        //             makeShadow(prevSquareXDummy, 'shadow');
-        //             makeShadow(prevSquareYDummy, 'shadow3');
-        //         }
-
-        //         let restrictionX=false;
-        //         let restrictionY=false;
-        //         // console.log(limitX, limitY, obstacle);
-        //         if(checkForObstacle(prevSquareXDummy, obstacleDummy, padding)==3){
-        //             restrictionY=true; //trebuie sa restrictionez miscarea pe Y ws
-        //         }
-        //         if(checkForObstacle(prevSquareYDummy, obstacleDummy, padding)==3){
-        //             restrictionX=true; //trebuie sa restrictionez miscarea pe X ad
-        //         }
-        //         if((checkPress['w'] || checkPress['arrowup']) && restrictionY){
-        //             newVal=obstacleDummy.top+(obstacleDummy.height/2+pretendSquareDummy.height/2);
-        //             if(obstColided>1){
-        //                 limitY=Math.max(limitY, newVal);
-        //             }else{
-        //                 limitY=newVal;
-        //             }
-        //             // console.log('sus', i);
-        //         }
-        //         if((checkPress['s'] || checkPress['arrowdown']) && restrictionY){
-        //             newVal=obstacleDummy.top-(obstacleDummy.height/2+pretendSquareDummy.height/2);
-        //             if(obstColided>1){
-        //                 limitY=Math.min(limitY, newVal);
-        //             }else{
-        //                 limitY=newVal;
-        //             }
-        //             // console.log('jos', i);
-        //             // if(i==1){newOnTheGround=true;}
-                    
-        //         }
-        //         if((checkPress['a'] || checkPress['arrowleft']) && restrictionX){
-        //             newVal=obstacleDummy.left+(obstacleDummy.width/2+pretendSquareDummy.width/2);
-        //             if(obstColided>1){
-        //                 limitX=Math.max(limitX, newVal);
-        //             }else{
-        //                 limitX=newVal;
-        //             }
-        //             // console.log('stanga', i);
-        //         }
-        //         if((checkPress['d'] || checkPress['arrowright']) && restrictionX){
-        //             newVal=obstacleDummy.left-(obstacleDummy.width/2+pretendSquareDummy.width/2);
-        //             if(obstColided>1){
-        //                 limitX=Math.min(limitX, newVal);
-        //             }else{
-        //                 limitX=newVal;
-        //             }
-        //             // console.log('dreapta', i);
-        //         }
-        //         if(ok){
-        //         console.log('esti in', obstacle, square, i);
-        //         console.log(restrictionX, 'ad', restrictionY, 'ws');
-        //         console.log(limitX, limitY, 'limite');
-        //         }
-        //         // console.log(shadow, '------------------------------------------------------');
-        //         // console.log(shadow2, '------------------------------------------------------');
-
-        //     }
-        // }//for
-
     })
-    // console.log(limitX, limitY, '*****************');
-    // console.log('hey')
-    // limitX-=distX;
-    // limitY-=distY;
-    // console.log(newAdjustForJump, '+++');
     return {limitX, limitY};
 }
 

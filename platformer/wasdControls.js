@@ -116,13 +116,25 @@ const gameLoop=function(){
         }else{
             checkJump=0;
         }
+        // console.log(e);
         checkPress[e.key.toLowerCase()]=true;
     })
     window.addEventListener('keyup', function(evt){
         checkPress[evt.key.toLowerCase()]=false;
     })
 
+    
+    
     updateSquare(isGravityOn);
+    // console.log(1*(countSeconds%6>2));
+    countSeconds++;
+    if(checkPress['d'] || checkPress['arrowright']){
+        string='right';
+    }
+    if(checkPress['a'] || checkPress['arrowleft']){
+        string='left';
+    }
+    square.style.backgroundImage=`url('${string}${1*(countSeconds%10>4)}.png')`
 
     isOnTheGround=false;
     const squareDummy=makeDummy(square);
@@ -162,7 +174,7 @@ const gameLoop=function(){
                 const shadow2=makeShadow(squareDummy, 'shadow');
                 // clearInterval(gameLoopID);
             }
-            if(noErr>noObst*precentage*2/100){
+            if(noErr>0){
                 err.classList.remove('hidden');
             }
         }
@@ -180,8 +192,10 @@ if(isGravityOn){
 const gameArea=limX*limY;
 const obstArea=obstH*obstW;
 const precentage=8;
-let noObst=5;
+let noObst=0;
 let noErr=0;
+let countSeconds=0;
+let string='left';
 noObst=parseInt((gameArea/obstArea)*precentage/100);
 console.log(noObst);
 generateObstacles(noObst, 'obstacle', limX, 0, limY, 0, 50, 40);
@@ -225,6 +239,8 @@ btnReset.addEventListener('click', function(){
     obstacles=document.querySelectorAll('.obstacle');
     obstLeft=noObst;
     noErr=0;
+    countSeconds=0;
+    string='left';
     err.classList.add('hidden');
     display.innerHTML=`${obstLeft} targets left`;
     // console.log(getComputedStyle(square).left)
