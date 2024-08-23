@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;700&display=swap');
+:root{
+    --dark-blue: #3D7EFF;
+    --light-blue: #C5D9FF;
+    --adjusted-sqrt2-glass: 1.41422;
+    --adjusted-sqrt2-sand: 1.4143;
+    --hourglass-size: 10px;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+/* --------------------------------------------- */
+#hourglass-container{
+    position: relative;
+    
+    width: calc( 11 * var(--hourglass-size));
+    height: calc( 16 * var(--hourglass-size));
+}
+/* --------------------------------------------- */
+.hourglass-top-bottom{
+    z-index: 20;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: 100%;
+    height: calc(100% * 3 / 32);
+    border-radius: var(--hourglass-size);
+    
+}
+#hourglass-margin-top{
+    top: 0;
+}
+#hourglass-margin-bottom{
+    top: calc(100% * 29 / 32);
+}
+/* --------------------------------------------- */
+.glass-square{
+    z-index: 10;
+    position: absolute;
+    background-color: var(--light-blue);
+
+    width: calc(100% * 16 / 22);
+    height: calc(100% * 7 / 32);
+}
+#glass-square-top{
+    left: calc(100% * 3 / 22);
+    top: calc(100% * 3 /32);
+}
+#glass-square-bottom{
+    left: calc(100% * 3 / 22);
+    top: calc(100% * 22 / 32);
+}
+/* --------------------------------------------- */
+.glass-triangle{
+    z-index: 10;
+    position: absolute;
+    background-color: var(--light-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-glass) * 8 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-glass) * 8 / 32);
+    
+    transform: rotate(-45deg);
+    transform-origin: top left;
+}
+#glass-triangle-top{
+    left: calc(100% * 3 / 22);
+    top: calc(100% * 10 /32);
+}
+#glass-triangle-bottom{
+    left: calc(100% * 3 / 22);
+    top: calc(100% * 22 / 32);
+}
+
+
+/* --------------------------------------------- */
+
+
+#sand-frame-1-top-square{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * 10 / 22);
+    height: calc(100% * 5 / 32);
+    
+    left: calc(100% * 6 / 22);
+    top: calc(100% * 3 /32);
+}
+#sand-frame-1-top-triangle{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 32);
+    
+    left: calc(100% * 6 / 22);
+    top: calc(100% * 8 / 32);
+
+    transform: rotate(-45deg);
+    transform-origin: top left;
+
+    border-bottom-left-radius: var(--hourglass-size);
+}
+
+
+/* --------------------------------------------- */
+
+
+#sand-frame-2-top-square{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * 10 / 22);
+    height: calc(100% * 3 / 32);
+    
+    left: calc(100% * 6 / 22);
+    top: calc(100% * 5 /32);
+}
+#sand-frame-2-top-triangle{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 32);
+    
+    left: calc(100% * 6 / 22);
+    top: calc(100% * 8 / 32);
+
+    transform: rotate(-45deg);
+    transform-origin: top left;
+
+    border-bottom-left-radius: var(--hourglass-size);
+}
+#sand-frame-2-top-mask{
+    z-index: 17;
+    position: absolute;
+    background-color: var(--light-blue);
+
+    width: calc(100% * 10 / 22);
+    height: calc(100% * 2 / 32);
+    
+    left: calc(100% * 6 / 22);
+    top: calc(100% * 3 /32);
+}
+/* --------------------------------------------- */
+#sand-frame-2-bottom-triangle{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-sand) * 3 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-sand) * 3 / 32);
+    
+    left: calc(100% * 8 / 22);
+    bottom: calc(100% * 3 / 32);
+
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+
+    border-top-left-radius: var(--hourglass-size);
+}
+
+
+/* --------------------------------------------- */
+
+
+#sand-frame-3-top-square{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * 10 / 22);
+    height: calc(100% * 1 / 32);
+    
+    left: calc(100% * 6 / 22);
+    top: calc(100% * 7 /32);
+}
+#sand-frame-3-top-triangle{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 32);
+    
+    left: calc(100% * 6 / 22);
+    top: calc(100% * 8 / 32);
+
+    transform: rotate(-45deg);
+    transform-origin: top left;
+
+    border-bottom-left-radius: var(--hourglass-size);
+}
+#sand-frame-3-top-mask{
+    z-index: 17;
+    position: absolute;
+    background-color: var(--light-blue);
+
+    width: calc(100% * 10 / 22);
+    height: calc(100% * 4 / 32);
+    
+    left: calc(100% * 6 / 22);
+    top: calc(100% * 3 /32);
+}
+/* --------------------------------------------- */
+#sand-frame-3-bottom-square{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * 10 / 22);
+    height: calc(100% * 1 / 32);
+    
+    left: calc(100% * 6 / 22);
+    bottom: calc(100% * 3 /32);
+}
+#sand-frame-3-bottom-triangle{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 32);
+    
+    left: calc(100% * 6 / 22);
+    bottom: calc(100% * 4 / 32);
+
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+
+    border-top-left-radius: var(--hourglass-size);
+    border-bottom-right-radius: 100%;
+}
+
+
+/* --------------------------------------------- */
+
+
+#sand-frame-4-top-triangle{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-sand) * 3 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-sand) * 3 / 32);
+    
+    left: calc(100% * 8 / 22);
+    top: calc(100% * 10 / 32);
+
+    transform: rotate(-45deg);
+    transform-origin: top left;
+
+    border-bottom-left-radius: var(--hourglass-size);
+}
+#sand-frame-4-top-mask{
+    z-index: 17;
+    position: absolute;
+    background-color: var(--light-blue);
+
+    width: calc(100% * 6 / 22);
+    height: calc(100% * 7 / 32);
+    
+    left: calc(100% * 8 / 22);
+    top: calc(100% * 3 /32);
+}
+/* --------------------------------------------- */
+#sand-frame-4-bottom-square{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * 10 / 22);
+    height: calc(100% * 3 / 32);
+    
+    left: calc(100% * 6 / 22);
+    bottom: calc(100% * 3 /32);
+}
+#sand-frame-4-bottom-triangle{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 32);
+    
+    left: calc(100% * 6 / 22);
+    bottom: calc(100% * 6 / 32);
+
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+
+    border-top-left-radius: var(--hourglass-size);
+}
+
+
+/* --------------------------------------------- */
+#sand-frame-5-bottom-square{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * 10 / 22);
+    height: calc(100% * 5 / 32);
+    
+    left: calc(100% * 6 / 22);
+    bottom: calc(100% * 3 /32);
+}
+#sand-frame-5-bottom-triangle{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 32);
+    
+    left: calc(100% * 6 / 22);
+    bottom: calc(100% * 8 / 32);
+
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+
+    border-top-left-radius: var(--hourglass-size);
+}
+/* --------------------------------------------- */
+
+#sand-frame-7-top-triangle{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-sand) * 3 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-sand) * 3 / 32);
+    
+    left: calc(100% * 8 / 22);
+    bottom: calc(100% * 10 / 32);
+
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+
+    border-top-left-radius: var(--hourglass-size);
+}
+#sand-frame-7-top-mask{
+    z-index: 17;
+    position: absolute;
+    background-color: var(--light-blue);
+
+    width: calc(100% * 6 / 22);
+    height: calc(100% * 7 / 32);
+    
+    left: calc(100% * 8 / 22);
+    bottom: calc(100% * 3 /32);
+}
+/* --------------------------------------------- */
+#sand-frame-7-bottom-square{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * 10 / 22);
+    height: calc(100% * 3 / 32);
+    
+    left: calc(100% * 6 / 22);
+    top: calc(100% * 3 /32);
+}
+#sand-frame-7-bottom-triangle{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 32);
+    
+    left: calc(100% * 6 / 22);
+    top: calc(100% * 6 / 32);
+
+    transform: rotate(-45deg);
+    transform-origin: top left;
+
+    border-bottom-left-radius: var(--hourglass-size);
+}
+
+
+/* --------------------------------------------- */
+
+
+#sand-frame-8-top-square{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * 10 / 22);
+    height: calc(100% * 1 / 32);
+    
+    left: calc(100% * 6 / 22);
+    bottom: calc(100% * 7 /32);
+}
+#sand-frame-8-top-triangle{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 32);
+    
+    left: calc(100% * 6 / 22);
+    bottom: calc(100% * 8 / 32);
+
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+
+    border-top-left-radius: var(--hourglass-size);
+}
+#sand-frame-8-top-mask{
+    z-index: 17;
+    position: absolute;
+    background-color: var(--light-blue);
+
+    width: calc(100% * 10 / 22);
+    height: calc(100% * 4 / 32);
+    
+    left: calc(100% * 6 / 22);
+    bottom: calc(100% * 3 /32);
+}
+/* --------------------------------------------- */
+#sand-frame-8-bottom-square{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * 10 / 22);
+    height: calc(100% * 1 / 32);
+    
+    left: calc(100% * 6 / 22);
+    top: calc(100% * 3 /32);
+}
+#sand-frame-8-bottom-triangle{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 32);
+    
+    left: calc(100% * 6 / 22);
+    top: calc(100% * 4 / 32);
+
+    transform: rotate(-45deg);
+    transform-origin: top left;
+
+    border-bottom-left-radius: var(--hourglass-size);
+    border-top-right-radius: 100%;
+}
+
+
+/* --------------------------------------------- */
+
+
+#sand-frame-9-top-square{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * 10 / 22);
+    height: calc(100% * 3 / 32);
+    
+    left: calc(100% * 6 / 22);
+    bottom: calc(100% * 5 /32);
+}
+#sand-frame-9-top-triangle{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-sand) * 5 / 32);
+    
+    left: calc(100% * 6 / 22);
+    bottom: calc(100% * 8 / 32);
+
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+
+    border-top-left-radius: var(--hourglass-size);
+}
+#sand-frame-9-top-mask{
+    z-index: 17;
+    position: absolute;
+    background-color: var(--light-blue);
+
+    width: calc(100% * 10 / 22);
+    height: calc(100% * 2 / 32);
+    
+    left: calc(100% * 6 / 22);
+    bottom: calc(100% * 3 /32);
+}
+/* --------------------------------------------- */
+#sand-frame-9-bottom-triangle{
+    z-index: 15;
+    position: absolute;
+    background-color: var(--dark-blue);
+
+    width: calc(100% * var(--adjusted-sqrt2-sand) * 3 / 22);
+    height: calc(100% * var(--adjusted-sqrt2-sand) * 3 / 32);
+    
+    left: calc(100% * 8 / 22);
+    top: calc(100% * 3 / 32);
+
+    transform: rotate(-45deg);
+    transform-origin: top left;
+
+    border-bottom-left-radius: var(--hourglass-size);
+}
+
+
+/* --------------------------------------------- */
