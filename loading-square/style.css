@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+#spinner-container{
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.spinner{
+    width: 50%;
+    height: 50%;
+    background-color: peru;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+#spinner{
+    animation-duration: 4s;
+    animation-name: loopSpinner;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes loopSpinner {
+    25%{
+        left: 50%;
+        top: 0;
+    }
+    50%{
+        left: 50%;
+        top: 50%;
+    }
+    75%{
+        left: 0%;
+        top: 50%;
+    }
+}
+
+
+.trace{
+    width: 50%;
+    height: 50%;
+    background-color: transparent;
+    position: absolute;
+    z-index: 1;
+}
+
+#poz1{
+    top: 0;
+    left: 0;
+    animation-duration: 8s;
+    animation-name: traceColors1;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(1, start);
+}
+
+@keyframes traceColors1 {
+    0%{
+        background-color: transparent;
+    }
+    50%{
+        background-color: burlywood;
+    }
+}
+
+#poz2{
+    top: 0;
+    left: 50%;
+    animation-duration: 8s;
+    animation-name: traceColors2;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(1, start);
+}
+
+@keyframes traceColors2 {
+    12.5%{
+        background-color: transparent;
+    }
+    62.5%{
+        background-color: burlywood;
+    }
+}
+
+#poz3{
+    top: 50%;
+    left: 50%;
+    animation-duration: 8s;
+    animation-name: traceColors3;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(1, start);
+}
+
+@keyframes traceColors3 {
+    25%{
+        background-color: transparent;
+    }
+    75%{
+        background-color: burlywood;
+    }
+}
+
+#poz4{
+    top: 50%;
+    left: 0;
+    animation-duration: 8s;
+    animation-name: traceColors4;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(1, start);
+}
+
+@keyframes traceColors4 {
+    37.5%{
+        background-color: transparent;
+    }
+    87.5%{
+        background-color: burlywood;
+    }
+}
+
