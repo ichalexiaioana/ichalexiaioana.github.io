@@ -13,38 +13,47 @@ button.addEventListener("click", function(evt){
     const value = input.value;
     let percentage = parseInt(value) || 0;
     percentage = ( (percentage % 100) + 100 * (percentage==100))
-    console.log(percentage, typeof(percentage));
     percentageHTML.innerHTML =  `${percentage}%`;
-    let degToROtate = percentage / 100 * 240;
+    let degToRotate = percentage / 100 * 240;
     // degToROtate = 180;
-    console.log(degToROtate);
 
+    // ---------------------------------
+    // applying the rotation on the first mask
     var rotateMask1 = document.createElement("style");
     rotateMask1.innerHTML=`
         .rotate-mask-1{
-            transform: rotate(${degToROtate}deg);
+            transform: rotate(${degToRotate}deg);
         }
     `;
     head.appendChild(rotateMask1);
     mask1.classList.add("rotate-mask-1");
+    // ---------------------------------
 
+    // ---------------------------------
+    // applying the rotation on the rounded corner
     var rotateRoundCorner = document.createElement("style");
     rotateRoundCorner.innerHTML=`
         .rotate-round-corner{
-            transform: rotate(${degToROtate}deg);
+            transform: rotate(${degToRotate}deg);
         }
     `;
     head.appendChild(rotateRoundCorner);
-    roundCorner.classList.add("rotate-round-corner")
+    roundCorner.classList.add("rotate-round-corner");
+    // ---------------------------------
 
+
+    // ---------------------------------
+    // applying the rotation on the second mask
     var rotateMask2 = document.createElement("style");
-    if (degToROtate>120 && degToROtate<=240){
+    if (degToRotate>120 && degToRotate<=240){
+        // the 2nd mask doesnt need to rotate if the gauge doesnt go more than halway
         rotateMask2.innerHTML=`
         .rotate-mask-2{
-            transform: rotate(${degToROtate-120}deg);
+            transform: rotate(${degToRotate-120}deg);
         }
     `;
     }else{
+        //this is here just for testing
         rotateMask2.innerHTML=`
         .rotate-mask-2{
             transform: rotate(${0}deg);
@@ -53,5 +62,6 @@ button.addEventListener("click", function(evt){
     }
     head.appendChild(rotateMask2);
     mask2.classList.add("rotate-mask-2");
+    // ---------------------------------
 
 })
