@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+:root{
+    --circle-diameter: 72px;
+    --circle-diameter: 360px;
+    --gauge-thickness: calc(20 / 72 * 100);
+    --gauge-color: #6ABB5A;
+    --animation-duration: 1s;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+
+#container-gauge{
+    width: var(--circle-diameter);
+    height: var(--circle-diameter);
+    position: relative;
+}
+
+#loading-gauge{
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-image: conic-gradient(var(--gauge-color) 240deg, transparent 0deg); */
+    background-color: var(--gauge-color);
+    border-radius: 100%;
+    transform: rotate(-120deg);
+}
+#rotating-gauge-container{
+    z-index: 200;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#rotating-gauge-mask-1{
+    z-index: 200;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-image: conic-gradient(transparent 240deg, white 60deg);
+
+    /* transform: rotate(180deg); */
+    transition: transform var(--animation-duration) linear;
+}
+#rotating-gauge-mask-2{
+    z-index: 200;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-image: conic-gradient(white 120deg, transparent 120deg);
+
+    /* transform: rotate(60deg); */
+    transition: transform calc(var(--animation-duration) / 2) linear;
+}
+#static-gauge-mask-3{
+    z-index: 200;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-image: conic-gradient(transparent 120deg, white 120deg 240deg, transparent 240deg);
+}
+#gauge-mask-circle{
+    z-index: 200;
+    position: absolute;
+    width: calc( 1% * (100 - var(--gauge-thickness)));
+    height: calc( 1% * (100 - var(--gauge-thickness)));
+    background-color: white;
+    border-radius: 100%;
+    top: calc( 1% * var(--gauge-thickness)/2);
+    left: calc( 1% * var(--gauge-thickness)/2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rounded-edges{
+    z-index: 300;
+    position: absolute;
+    width: calc( 1% * var(--gauge-thickness) / 2);
+    height: calc( 1% * var(--gauge-thickness) / 2);
+    border-radius: 100%;
+    background-color: var(--gauge-color);
+    /* background-color: orange; */
+    left: calc( 1% * (50 - var(--gauge-thickness) / 4));
+}
+.rounded-edges-container{
+    z-index: 300;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-origin: center;
+}
+#rounded-edges-container-start{
+    transform: rotate(-120deg);
+}
+#rounded-edges-container-end{
+    transform: rotate(-120deg);
+}
+#text-container{
+    width: 80%;
+    height: 60%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: calc(0.3 * var(--circle-diameter));
+}
+#rotating-round-corner{
+    z-index: 300;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* transform: rotate(180deg); */
+    transition: transform var(--animation-duration) linear;
+}
+#mask{
+    z-index: 400;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(transparent 70.4%, white 50%);
+}

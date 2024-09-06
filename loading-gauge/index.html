@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Loading Gauge</title>
+    <style>
+        #container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #container-btn{
+            display: flex;
+            flex-direction: column;
+            margin-top: 60px;
+        }
+        #container-btn > * {
+            width: 200px;
+            height: 40px;
+            margin: 10px 0;
+            font-size: 1.6rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="container-gauge">
+            <div id="rotating-gauge-container">
+                <div id="loading-gauge"></div>
+                <div id="rotating-gauge-mask-1"></div>
+                <div id="rotating-gauge-mask-2"></div>
+                <div id="static-gauge-mask-3"></div>
+            </div>
+
+            <div id="gauge-mask-circle">
+                <div id="text-container"></div>
+            </div>
+
+            <div class="rounded-edges-container" id="rounded-edges-container-start">
+                <div class="rounded-edges" id="round-edge-start"></div>
+            </div>
+
+            <div id="rotating-round-corner">
+                <div class="rounded-edges-container" id="rounded-edges-container-end">
+                    <div class="rounded-edges" id="round-edge-end"></div>
+                </div>
+            </div>
+            <!-- <div id="mask"></div> -->
+            
+        </div>
+        <div id="container-btn">
+            <input type="number" name="percentage-pick" id="percentage-pick">
+            <button id="click-button">click me!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
